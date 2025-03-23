@@ -1,0 +1,50 @@
+<div class="container">
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <h2>Create Account</h2>
+
+    <!-- Error and Success Messages -->
+    <div *ngIf="errorMessage?.trim()" class="error" role="alert">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+
+    <!-- Username Field -->
+    <label for="username">Username</label>
+    <input 
+      id="username" 
+      formControlName="username" 
+      placeholder="Enter your username" 
+    />
+    <div *ngIf="signupForm.controls['username'].invalid && signupForm.controls['username'].touched" class="error">
+      Username is required.
+    </div>
+
+    <!-- Email Field -->
+    <label for="email">Email</label>
+    <input 
+      id="email" 
+      formControlName="email" 
+      type="email" 
+      placeholder="Enter your email" 
+    />
+    <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="error">
+      Please enter a valid email.
+    </div>
+    
+
+    <!-- Password Field -->
+    <label for="password">Password</label>
+    <input 
+      id="password" 
+      formControlName="password" 
+      type="password" 
+      placeholder="Enter your password" 
+    />
+    <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="error">
+      Password is required.
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+
+    <p>Already have an account? <button (click)="navigateToLogin()">Login here</button></p>
+  </form>
+</div>

@@ -1,0 +1,87 @@
+/* Primary Theme Colors */
+:root {
+  --primary-blue: #0077b5;
+  --secondary-white: #ffffff;
+  --light-gray: #f3f2ef;
+  --dark-gray: #212529;
+}
+
+/* Body Styling with Flexbox Centering */
+body, html {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+}
+.btn-primary:hover {
+  background-color: #005582;
+  border-color: #005582;
+}
+
+/* Container and Card Styles */
+.container {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--secondary-white);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+h2 {
+  color: var(--primary-blue);
+  text-align: center;
+}
+
+/* Links */
+a {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Form Inputs */
+.form-control {
+  border-radius: 6px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.form-control:focus {
+  border-color: var(--primary-blue);
+  outline: none;
+  box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+/* Error Message */
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+/* Success Message */
+.success {
+  color: green;
+  font-size: 12px;
+}
+
+/* Button Disabled State */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
